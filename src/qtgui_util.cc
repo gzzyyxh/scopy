@@ -193,9 +193,6 @@ ads::CDockWidget* DockerUtils::createCDockWidget(ads::CDockManager* manager, QWi
        ads::CDockWidget* cDockWidget = new ads::CDockWidget(dockerName, manager);
        cDockWidget->setWidget(widget);
 
-       cDockWidget->setFeature(ads::CDockWidget::DockWidgetMovable, true);
-       cDockWidget->setFeature(ads::CDockWidget::DockWidgetFloatable, true);
-
        connect(cDockWidget, &ads::CDockWidget::viewToggled, manager, [=](bool opened){
 		if (!opened) {
 			manager->addDockWidgetTab(ads::CenterDockWidgetArea, cDockWidget);
